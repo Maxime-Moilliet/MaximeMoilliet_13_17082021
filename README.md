@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# OPENCLASSROOMS PROJECT 13
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React app for managing a user Bank Account
 
-## Available Scripts
+## Dependencies
 
 In the project directory, you can run:
 
