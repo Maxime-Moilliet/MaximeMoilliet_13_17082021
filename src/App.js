@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Routes } from './routes/Routes';
+import Routes from './routes/Routes';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { userIsLogin } from './redux/actions/authActions';
