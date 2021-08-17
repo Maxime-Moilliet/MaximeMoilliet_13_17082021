@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "@redux-saga/core/effects"
-import { fetchUserInfo } from "../api/userFetch"
-import { USER_INFO, USER_INFO_REQUESTED, USER_INFO_FAILED } from "../constants/userConstants"
+import { fetchUserInfo, fetchUserInfoUpdate } from "../api/userFetch"
+import { USER_INFO, USER_INFO_REQUESTED, USER_INFO_FAILED, USER_INFO_UPDATED_REQUESTED, USER_INFO_UPDATED } from "../constants/userConstants"
 
 export function* handlerUserInfo() {
     try {
@@ -11,7 +11,20 @@ export function* handlerUserInfo() {
     }
 }
 
+export function* handlerUserInfoUpdate({ payload }) {
+    try {
+        yield call(fetchUserInfoUpdate, payload)
+        yield put({ type: USER_INFO_UPDATED, payload: { firstName: payload.firstName, lastName: payload.lastName } })
+    } catch(err) {
+        yield put({ type: USER_INFO_FAILED, payload: err.message })
+    }
+}
+
 export function* watcherUserInfoSaga() {
     yield takeLatest(USER_INFO_REQUESTED, handlerUserInfo)
+}
+
+export function* watcherUserInfoUpdateSaga() {
+    yield takeLatest(USER_INFO_UPDATED_REQUESTED, handlerUserInfoUpdate)
 }
 

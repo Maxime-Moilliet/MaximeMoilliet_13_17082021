@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar';
 import { Footer } from '../components/Footer';
 import Login from '../screens/Login';
 import { connect } from "react-redux";
-import { Profile } from '../screens/Profile';
+import Profile from '../screens/Profile';
 
 
 class Routes extends React.Component {

@@ -1,4 +1,4 @@
-import { USER_INFO, USER_INFO_FAILED } from "../constants/userConstants";
+import { USER_INFO, USER_INFO_FAILED, USER_INFO_UPDATED } from "../constants/userConstants";
 
 const userReducer = (state = [], action) => {
     switch (action.type) {
@@ -15,6 +15,12 @@ const userReducer = (state = [], action) => {
                 firstName: '',
                 lastName: '',
                 userInfoFailed: action.payload
+            }
+        case USER_INFO_UPDATED:
+            return {
+                ...state,
+                firstName: action.payload.firstName,
+                lastName: action.payload.lastName,
             }
         default:
             return state

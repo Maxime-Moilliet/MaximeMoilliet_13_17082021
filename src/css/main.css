@@ -314,3 +314,37 @@ body {
     width: 200px;
   }
 }
+
+.editUserinfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.editUserInfo__input {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.editUserinfo__container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-left: 11px;
+  align-items: center;
+}
+
+.editUserInfo__button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px; 
+}
+
+.editUserInfo__button.second {
+  border-color: #929292;
+  background-color: #929292;
+}
