@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Account } from '../components/Account';
+import { accounts } from '../data/accounts';
 import { userInfoUpdate } from '../redux/actions/userActions';
 
 class Profile extends React.Component {
@@ -62,6 +64,14 @@ class Profile extends React.Component {
                     )}
                 </div>
                 <h2 className="sr-only">Accounts</h2>
+                { accounts.map(account => 
+                    <Account
+                        key={account.id}
+                        title={account.title}
+                        amount={account.amount}
+                        description={account.description}
+                    />
+                )}
             </main>
         );
     }
