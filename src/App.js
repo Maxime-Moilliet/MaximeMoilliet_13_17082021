@@ -4,14 +4,15 @@ import { Routes } from './routes/Routes';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { userIsLogin } from './redux/actions/authActions';
+import { getUserInfo } from './redux/actions/userActions';
 
 class App extends React.Component {
 
   componentDidMount() {
     const { haveToken } = this.props
     if(haveToken.length) {
-      console.log('oui');
       this.props.userIsLogin();
+      this.props.getUserInfo();
     }
   }
 
@@ -33,7 +34,8 @@ const mstp = (state) => {
 const mdtp = (dispatch) => {
   return bindActionCreators(
     {
-      userIsLogin
+      userIsLogin,
+      getUserInfo
     },
     dispatch
   );

@@ -1,0 +1,4 @@
+export const USER_INFO = 'USER_INFO'
+export const USER_INFO_FAILED = 'USER_INFO_FAILED'
+
+export const USER_INFO_REQUESTED = 'USER_INFO_REQUESTED'
